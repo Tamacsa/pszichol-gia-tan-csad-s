@@ -1,4 +1,3 @@
-// JavaScript source code
 document.getElementById("emailButton").addEventListener("click", function() {
     var recipientEmail = "tamas.eva73@gmail.com";
     var emailSubject = "Konzultacio!";
