@@ -210,7 +210,7 @@
           <div class="col-lg-12">
               <div class="button-footer">
                   <button type="button" class="btn btn-dark btn-lg email-button"><i class="fa-solid fa-envelope"></i> E-mail</button>
-                  <button type="button" class="btn btn-light btn-lg email-button"><i class="fa-solid fa-phone"></i> Telefon</button>
+                  <button type="button" class="btn btn-light btn-lg phone-button"><i class="fa-solid fa-phone"></i> Telefon</button>
               </div>
           </div>
       </div>
@@ -260,9 +260,22 @@ document.querySelector(".email-button").addEventListener("click", function() {
 
     
 
-document.querySelector(".phone-button").addEventListener("click", function() {
-    // Add the phone button's functionality here
+document.querySelectorAll(".phone-button").forEach(function(button) {
+    button.addEventListener("click", function() {
+        var confirmMessage = "Emailben vegye fel a kapcsolatot a telefonos elérhetőségért.";
+        
+        if (confirm(confirmMessage)) {
+            // If user confirms, add email functionality here
+            var recipientEmail = "tamas.eva73@gmail.com";
+            var emailSubject = "Telefonszám";
+            var emailBody = "Kedves Éva, kérem, hogy egyeztessek Önnel személyesen adja meg a telefonszámát";
+            
+            var mailtoLink = "mailto:" + recipientEmail + "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailBody);
+            
+            window.open(mailtoLink, "_blank");
+        }
     });
+});
 </script>
 </body>
 
