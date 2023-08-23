@@ -52,12 +52,12 @@
 
 
           <div class="row">
-               <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <h1>Találja meg a lelki békéjét. Kerüljön újra egyensúlyba.</h1>
-                    <button type="button"  class="btn btn-light btn-lg email-button"><i class="fa-solid fa-envelope"></i> E-mail</button>
-                    <button type="button"  class="btn btn-dark btn-lg email-button"><i class="fa-solid fa-phone"></i> Telefon</button>
+                    <button type="button" class="btn btn-light btn-lg download-button email-button"><i class="fa-solid fa-envelope"></i> E-mail</button>
+                    <button type="button" class="btn btn-dark btn-lg download-button phone-button"><i class="fa-solid fa-phone"></i> Telefon</button>
                 </div>
-                 <div class="title-img-holder col-lg-6 col-md-12 col-sm-12">                  
+                <div class="title-img-holder col-lg-6 col-md-12 col-sm-12">                  
                     <img class="title-img" src="images/eva.png" alt="iphone-mockup">             
                 </div>
           </div>
@@ -236,7 +236,7 @@
   </footer>
 
 <script>
-document.getElementById(".email-button").addEventListener("click", function() {
+document.querySelector(".email-button").addEventListener("click", function() {
     var recipientEmail = "tamas.eva73@gmail.com";
     var emailSubject = "Konzultacio!";
     var emailBody = "Üdvözlöm,\n\n";
@@ -245,6 +245,24 @@ document.getElementById(".email-button").addEventListener("click", function() {
     
     window.open(mailtoLink, "_blank");
 });
+
+    document.querySelectorAll(".email-button").forEach(function(button) {
+    button.addEventListener("click", function() {
+        var recipientEmail = "tamas.eva73@gmail.com";
+        var emailSubject = "Konzultacio!";
+        var emailBody = "Üdvözlöm,\n\n";
+        
+        var mailtoLink = "mailto:" + recipientEmail + "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailBody);
+        
+        window.open(mailtoLink, "_blank");
+    });
+});
+
+    
+
+document.querySelector(".phone-button").addEventListener("click", function() {
+    // Add the phone button's functionality here
+    });
 </script>
 </body>
 
